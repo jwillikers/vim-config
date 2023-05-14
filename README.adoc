@@ -1,0 +1,115 @@
+= Vim Config
+Jordan Williams <jordan@jwillikers.com>
+:experimental:
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:Vim: https://www.vim.org/[Vim]
+
+My configuration for {Vim}, the ubiquitous text editor.
+
+== Usage
+
+This repository contains the configuration file for {Vim}.
+This file is synchronized using this Git repository.
+The following instructions detail how to use and sync this repository.
+
+=== Install
+
+Install these settings with the following instructions.
+
+. Install the `awesome-vim-colorschemes` and `vim` packages.
++
+[,sh]
+----
+sudo rpm-ostree install awesome-vim-colorschemes vim
+----
+
+. Reboot for the packages to be available.
++
+[,sh]
+----
+sudo systemctl reboot
+----
+
+. Clone this repository.
++
+[,sh]
+----
+git -C ~/Projects clone git@github.com:jwillikers/vim-config.git
+----
+
+. Create the _~/.vim/_ directory.
++
+[,sh]
+----
+mkdir ~/.vim/
+----
+
+. Copy the `vimrc` file to the config directory.
++
+[,sh]
+----
+cp ~/Projects/vim-config/vimrc ~/.vim/
+----
+
+=== Update
+
+To update the settings in this repository from an existing installation, follow these steps.
+
+. If you haven't already done so, clone this repository.
++
+[,sh]
+----
+git -C ~/Projects clone git@github.com:jwillikers/vim-config.git
+----
+
+. Copy the `vimrc` file from the config directory to this repository.
++
+[,sh]
+----
+cp ~/.vim/vimrc ~/Projects/vim-config/
+----
+
+. Stage the updated file.
++
+[,sh]
+----
+git -C ~/Projects/vim-config add -A
+----
+
+. Commit.
++
+[,sh]
+----
+git -C ~/Projects/vim-config commit -m "Update configuration putting all others to shame"
+----
+
+. Push the changes back to the central repository.
++
+[,sh]
+----
+git -C ~/Projects/vim-config push
+----
+
+== Code of Conduct
+
+Please refer to the project's link:CODE_OF_CONDUCT.adoc[Code of Conduct].
+
+== License
+
+This repository is licensed under the https://www.gnu.org/licenses/gpl-3.0.html[GPLv3].
+Please refer to the bundled link:LICENSE.adoc[license].
+
+== Copyright
+
+© 2023 Jordan Williams
+
+== Authors
+
+mailto:{email}[{author}]
