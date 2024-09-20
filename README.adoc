@@ -10,6 +10,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 :Vim: https://www.vim.org/[Vim]
+:just: https://github.com/casey/just[just]
 
 My configuration for {Vim}, the ubiquitous text editor.
 
@@ -23,11 +24,27 @@ The following instructions detail how to use and sync this repository.
 
 Install these settings with the following instructions.
 
-. Install the `awesome-vim-colorschemes` and `vim` packages.
+. Install {just} by following the instructions in the https://github.com/casey/just?tab=readme-ov-file#installation[installation section].
+
+. Clone this repository.
 +
 [,sh]
 ----
-sudo rpm-ostree install awesome-vim-colorschemes vim
+git clone git@github.com:jwillikers/vim-config.git
+----
+
+. Change to the project's directory.
++
+[,sh]
+----
+cd vim-config
+----
+
+. Run `just` to symlink the config to the correct location.
++
+[,sh]
+----
+just
 ----
 
 . Reboot for the packages to be available.
@@ -35,66 +52,6 @@ sudo rpm-ostree install awesome-vim-colorschemes vim
 [,sh]
 ----
 sudo systemctl reboot
-----
-
-. Clone this repository.
-+
-[,sh]
-----
-git -C ~/Projects clone git@github.com:jwillikers/vim-config.git
-----
-
-. Create the _~/.vim/_ directory.
-+
-[,sh]
-----
-mkdir ~/.vim/
-----
-
-. Copy the `vimrc` file to the config directory.
-+
-[,sh]
-----
-cp ~/Projects/vim-config/vimrc ~/.vim/
-----
-
-=== Update
-
-To update the settings in this repository from an existing installation, follow these steps.
-
-. If you haven't already done so, clone this repository.
-+
-[,sh]
-----
-git -C ~/Projects clone git@github.com:jwillikers/vim-config.git
-----
-
-. Copy the `vimrc` file from the config directory to this repository.
-+
-[,sh]
-----
-cp ~/.vim/vimrc ~/Projects/vim-config/
-----
-
-. Stage the updated file.
-+
-[,sh]
-----
-git -C ~/Projects/vim-config add -A
-----
-
-. Commit.
-+
-[,sh]
-----
-git -C ~/Projects/vim-config commit -m "Update configuration putting all others to shame"
-----
-
-. Push the changes back to the central repository.
-+
-[,sh]
-----
-git -C ~/Projects/vim-config push
 ----
 
 == Code of Conduct
